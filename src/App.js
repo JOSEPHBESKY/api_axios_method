@@ -1,16 +1,16 @@
-import React,{useState,useEffect} from 'react'
-import {useSelector,useDispatch} from 'react-redux'
-import {addtocart} from './slice'
- import axios from 'axios'
+import React,{useState,useEffect} from 'react';
+import {useSelector,useDispatch} from 'react-redux';
+import {addtocart} from './slice';
+ import axios from 'axios';
 function App() {
   const state=useSelector((state)=>(state))
   console.log(state);
-  const dispatch=useDispatch()
-  const [task,settask]=useState([])
+  const dispatch=useDispatch();
+  const [task,settask]=useState([]);
   console.log(task);
   useEffect(()=>{
-    gettask()
-  },[])
+    gettask();
+  },[]);
   const gettask=async()=>{
     // fetch("https://jsonplaceholder.tyicode.com/todos")
     // .then((res)=> res.json())
@@ -21,7 +21,7 @@ function App() {
     settask(res.data)
   }
   const addcart=()=>{
-    dispatch(addtocart([{name:"joseph"}]))
+    dispatch(addtocart([{name:"joseph"}]));
   }
   return (
     <div>
@@ -30,4 +30,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
